@@ -1,10 +1,9 @@
-
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Radar, Info } from 'lucide-react';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Radar, Info } from "lucide-react";
 
 interface InputPanelProps {
   latitude: string;
@@ -21,7 +20,7 @@ export const InputPanel = ({
   onLatitudeChange,
   onLongitudeChange,
   onSubmit,
-  isLoading
+  isLoading,
 }: InputPanelProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,7 +33,7 @@ export const InputPanel = ({
         <div className="flex items-center justify-center gap-2 mb-2">
           <Radar className="h-6 w-6 text-venus-orange animate-pulse-glow" />
           <CardTitle className="text-venus-gold font-mono text-xl">
-            Venus Metadata Query
+            Radar Metadata Lookup
           </CardTitle>
         </div>
         <p className="text-venus-gold/70 text-sm">
@@ -51,13 +50,18 @@ export const InputPanel = ({
                 <p className="font-medium mb-1">Coordinate Format:</p>
                 <p>• Latitude: +43 for 43°N, -32 for 32°S</p>
                 <p>• Longitude: +43 for 43°E, -32 for 32°W</p>
+                <p>• This tool is for reference only (double-check!)</p>
+                <p>• For cycle 2, this tool only predicts the possibility</p>
               </div>
             </div>
           </div>
 
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="latitude" className="text-venus-gold/90 font-medium">
+              <Label
+                htmlFor="latitude"
+                className="text-venus-gold/90 font-medium"
+              >
                 Latitude (°) - North (+) / South (-)
               </Label>
               <Input
@@ -75,7 +79,10 @@ export const InputPanel = ({
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="longitude" className="text-venus-gold/90 font-medium">
+              <Label
+                htmlFor="longitude"
+                className="text-venus-gold/90 font-medium"
+              >
                 Longitude (°) - East (+) / West (-)
               </Label>
               <Input

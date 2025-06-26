@@ -89,10 +89,10 @@ export default function Page() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-venus-gold mb-4 font-mono">
-            Venus Radar Observatory
+            Magellan Radar Characteristics Lookup
           </h1>
           <p className="text-venus-gold/70 text-lg max-w-2xl mx-auto">
-            Planetary Science Data Retrieval System
+            Venus SAR Data (Cycle 1-2)
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-venus-orange to-venus-gold mx-auto mt-4 rounded-full" />
         </div>
@@ -124,7 +124,7 @@ export default function Page() {
 
         {/* Footer */}
         <div className="text-center mt-16 text-venus-gold/50 text-sm font-mono">
-          <p>Venus Radar Metadata Dashboard • Planetary Science Division</p>
+          <p> VERITAS • contact linn.thuya247@gmail.com for issues </p>
         </div>
       </div>
     </div>

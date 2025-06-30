@@ -1,6 +1,6 @@
 export async function fetchMetadata(lat: number, lon: number) {
-    const res = await fetch(`http://localhost:8000/api/metadata?lat=${lat}&lon=${lon}`);
-  //const res = await fetch(`https://venus-radar-data-lookup.onrender.com/api/metadata?lat=${lat}&lon=${lon}`);
+  //const res = await fetch(`http://localhost:8000/api/metadata?lat=${lat}&lon=${lon}`);
+  const res = await fetch(`https://venus-radar-data-lookup.onrender.com/api/metadata?lat=${lat}&lon=${lon}`);
   
     if (!res.ok) {
       const errorBody = await res.json();

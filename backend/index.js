@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import { interpolateCycle1 } from './utils/interpolateCycle1.js';
 import { getCycle2Status } from './utils/getCycle2Status.js';
+import { interpolateCycle2 } from './utils/interpolateCycle2.js';
+
 
 const app = express();
 app.use(cors());
@@ -18,7 +20,10 @@ app.get('/api/metadata', (req, res) => {
   }
 
   const cycle1 = interpolateCycle1(lat);
-  const cycle2 = getCycle2Status(lat, lon);
+  const cycle2 = {
+    ...getCycle2Status(lat, lon),
+    ...interpolateCycle2(lat)
+  };
 
   res.json({
     latitude: lat,

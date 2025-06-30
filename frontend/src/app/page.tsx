@@ -20,6 +20,7 @@ interface MetadataResult {
   cycle2: {
     coverage: string;
     viewDirection?: string | null;
+    incidenceAngle: number;
   };
 }
 

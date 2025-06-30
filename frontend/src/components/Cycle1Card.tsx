@@ -16,6 +16,7 @@ interface MetadataResult {
   cycle2: {
     coverage: string;
     viewDirection?: string | null;
+    incidenceAngle: number;
   };
 }
 
@@ -30,7 +31,7 @@ export const Cycle1Card = ({ result }: Cycle1CardProps) => {
         <div className="flex items-center justify-between">
           <CardTitle className="text-venus-gold font-mono text-xl flex items-center gap-2">
             <Target className="h-5 w-5 text-venus-orange" />
-            Cycle 1 - Radar Metadata
+            Cycle 1
           </CardTitle>
           <div className="text-venus-gold/70 font-mono text-sm">
             {result.latitude.toFixed(4)}°, {result.longitude.toFixed(4)}°
@@ -53,13 +54,9 @@ export const Cycle1Card = ({ result }: Cycle1CardProps) => {
               }`}
             >
               {result.cycle1.covered ? (
-                <div className="flex items-center gap-1">
-                  <CheckCircle className="h-3 w-3" />
-                  Likely Covered
-                </div>
+                <div className="flex items-center gap-1">Likely Covered</div>
               ) : (
                 <div className="flex items-center gap-1">
-                  <XCircle className="h-3 w-3" />
                   Likely Not Covered
                 </div>
               )}
@@ -117,7 +114,7 @@ export const Cycle1Card = ({ result }: Cycle1CardProps) => {
                   </span>
                 </div>
                 <div className="text-2xl font-mono text-white">
-                  {result.cycle1.alongTrackResolution?.toFixed(1)} m
+                  {result.cycle1.alongTrackResolution?.toFixed(1)}
                 </div>
               </div>
             </div>

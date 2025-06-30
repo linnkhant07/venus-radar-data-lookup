@@ -1,8 +1,7 @@
-
-import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { CheckCircle, XCircle, Target, Eye, Ruler } from 'lucide-react';
+import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { CheckCircle, XCircle, Target, Eye, Ruler } from "lucide-react";
 
 interface MetadataResult {
   latitude: number;
@@ -42,24 +41,26 @@ export const Cycle1Card = ({ result }: Cycle1CardProps) => {
         {/* Coverage Status */}
         <div className="bg-venus-bg-primary/30 rounded-lg p-4 border border-venus-orange/20">
           <div className="flex items-center justify-between">
-            <span className="text-venus-gold/90 font-medium">Coverage Status</span>
-            <Badge 
+            <span className="text-venus-gold/90 font-medium">
+              Coverage Status
+            </span>
+            <Badge
               variant={result.cycle1.covered ? "default" : "secondary"}
               className={`font-mono ${
-                result.cycle1.covered 
-                  ? "bg-green-600/20 text-green-400 border-green-500/30" 
+                result.cycle1.covered
+                  ? "bg-green-600/20 text-green-400 border-green-500/30"
                   : "bg-red-600/20 text-red-400 border-red-500/30"
               }`}
             >
               {result.cycle1.covered ? (
                 <div className="flex items-center gap-1">
                   <CheckCircle className="h-3 w-3" />
-                  Covered
+                  Likely Covered
                 </div>
               ) : (
                 <div className="flex items-center gap-1">
                   <XCircle className="h-3 w-3" />
-                  Not Covered
+                  Likely Not Covered
                 </div>
               )}
             </Badge>
@@ -73,39 +74,47 @@ export const Cycle1Card = ({ result }: Cycle1CardProps) => {
               <div className="bg-venus-bg-primary/30 rounded-lg p-4 border border-venus-orange/20">
                 <div className="flex items-center gap-2 mb-2">
                   <Target className="h-4 w-4 text-venus-orange" />
-                  <span className="text-venus-gold/90 font-medium">Incidence Angle</span>
+                  <span className="text-venus-gold/90 font-medium">
+                    Incidence Angle
+                  </span>
                 </div>
                 <div className="text-2xl font-mono text-white">
                   {result.cycle1.incidenceAngle.toFixed(2)}°
                 </div>
               </div>
-              
+
               <div className="bg-venus-bg-primary/30 rounded-lg p-4 border border-venus-orange/20">
                 <div className="flex items-center gap-2 mb-2">
                   <Eye className="h-4 w-4 text-venus-orange" />
-                  <span className="text-venus-gold/90 font-medium">Number of Looks</span>
+                  <span className="text-venus-gold/90 font-medium">
+                    Number of Looks
+                  </span>
                 </div>
                 <div className="text-2xl font-mono text-white">
                   {result.cycle1.numberOfLooks}
                 </div>
               </div>
             </div>
-            
+
             <div className="space-y-3">
               <div className="bg-venus-bg-primary/30 rounded-lg p-4 border border-venus-orange/20">
                 <div className="flex items-center gap-2 mb-2">
                   <Ruler className="h-4 w-4 text-venus-orange" />
-                  <span className="text-venus-gold/90 font-medium">Cross-track Resolution</span>
+                  <span className="text-venus-gold/90 font-medium">
+                    Cross-track Resolution
+                  </span>
                 </div>
                 <div className="text-2xl font-mono text-white">
                   {result.cycle1.crossTrackResolution?.toFixed(1)} m
                 </div>
               </div>
-              
+
               <div className="bg-venus-bg-primary/30 rounded-lg p-4 border border-venus-orange/20">
                 <div className="flex items-center gap-2 mb-2">
                   <Ruler className="h-4 w-4 text-venus-orange rotate-90" />
-                  <span className="text-venus-gold/90 font-medium">Along-track Resolution</span>
+                  <span className="text-venus-gold/90 font-medium">
+                    Along-track Resolution
+                  </span>
                 </div>
                 <div className="text-2xl font-mono text-white">
                   {result.cycle1.alongTrackResolution?.toFixed(1)} m

@@ -32,4 +32,4 @@ app.get('/api/metadata', (req, res) => {
   });
 });
 
-app.listen(8000, () => console.log('🚀 Backend running at http://localhost:8000'));
+app.listen(8000, () => console.log('🚀 Backend running'));
